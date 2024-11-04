@@ -25,7 +25,6 @@ export async function getPackages() {
 }
 
 export async function refreshPackages() {
-  console.log("refreshing packages");
   try {
     const response = await fetch(sqliteURL);
     const buffer = await response.arrayBuffer();

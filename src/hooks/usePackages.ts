@@ -19,7 +19,6 @@ export default function usePackages() {
   useEffect(() => {
     async function fetchData() {
       try {
-        console.log("fetching data");
         await ensureFreshness();
         const packages = await getPackages();
         setData(packages);
@@ -47,6 +46,5 @@ function shouldRefresh(): boolean {
   if (!lastRefreshAt) {
     return true;
   }
-  console.log(lastRefreshAt);
   return new Date().getTime() - lastRefreshAt.getTime() > maxStalenessInMs;
 }
